@@ -32,6 +32,7 @@ set(net_sources
 	"../net/inet/ipv6_getpeername.c"
 	"../net/inet/ipv6_getsockname.c"
 	"../net/inet/ipv6_setsockopt.c"
+	"../net/net_initialize.c"
 	"../net/netdev/netdev_carrier.c"
 	"../net/netdev/netdev_count.c"
 	"../net/netdev/netdev_default.c"
