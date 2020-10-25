@@ -233,8 +233,9 @@ target_include_directories(mocks_arch_lib PRIVATE
 	)
 add_executable(test
 	"test_main.cpp"
+	"tests/simple.cpp"
 	)
-target_include_directories(test PRIVATE .)
+target_include_directories(test PRIVATE . include include_nuttx)
 target_link_libraries(test PRIVATE
 	net_lib
 	deps_lib
