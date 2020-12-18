@@ -216,4 +216,31 @@ void net_initialize(void)
 #endif
 }
 
+/****************************************************************************
+ * Name: net_teardown
+ *
+ * Description:
+ *   This function is called from out of tree network tests target. Frees
+ *   all memory allocated during network testing and nulls out all global
+ *   variables.
+ *
+ * Input Parameters:
+ *   None
+ *
+ * Returned Value:
+ *   None
+ *
+ ****************************************************************************/
+
+void net_teardown(void)
+{
+  /* Tear down the locking facility */
+
+  net_lockteardown();
+
+  /* Tear down the device interface layer */
+
+  devif_teardown();
+}
+
 #endif /* CONFIG_NET */

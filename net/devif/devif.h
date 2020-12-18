@@ -306,6 +306,22 @@ EXTERN uint8_t g_reassembly_timer;
 void devif_initialize(void);
 
 /****************************************************************************
+ * Name: devif_teardown
+ *
+ * Description:
+ *   Perform teardown of the network device interface layer
+ *
+ * Input Parameters:
+ *   None
+ *
+ * Returned Value:
+ *   None
+ *
+ ****************************************************************************/
+
+void devif_teardown(void);
+
+/****************************************************************************
  * Name: devif_callback_init
  *
  * Description:
@@ -317,6 +333,19 @@ void devif_initialize(void);
  ****************************************************************************/
 
 void devif_callback_init(void);
+
+/****************************************************************************
+ * Name: devif_callback_teardown
+ *
+ * Description:
+ *   Free all allocated callback structures.
+ *
+ * Assumptions:
+ *   This function must be called with the network locked.
+ *
+ ****************************************************************************/
+
+void devif_callback_teardown(void);
 
 /****************************************************************************
  * Name: devif_callback_alloc

@@ -87,6 +87,16 @@ struct timeval;           /* Forward reference */
 void net_lockinitialize(void);
 
 /****************************************************************************
+ * Name: net_lockteardown
+ *
+ * Description:
+ *   Tear down the locking facility
+ *
+ ****************************************************************************/
+
+void net_lockteardown(void);
+
+/****************************************************************************
  * Name: net_breaklock
  *
  * Description:

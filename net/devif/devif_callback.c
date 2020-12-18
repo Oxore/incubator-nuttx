@@ -219,6 +219,29 @@ void devif_callback_init(void)
 }
 
 /****************************************************************************
+ * Name: devif_callback_teardown
+ *
+ * Description:
+ *   Configure the pre-allocated callback structures into a free list.
+ *
+ * Assumptions:
+ *   Called early in the initialization sequence so that no special
+ *   protection is required.
+ *
+ ****************************************************************************/
+
+void devif_callback_teardown(void)
+{
+  int i;
+
+  for (i = 0; i < CONFIG_NET_NACTIVESOCKETS; i++)
+    {
+      g_cbprealloc[i].nxtconn = g_cbfreelist;
+      g_cbfreelist = &g_cbprealloc[i];
+    }
+}
+
+/****************************************************************************
  * Name: devif_callback_alloc
  *
  * Description:

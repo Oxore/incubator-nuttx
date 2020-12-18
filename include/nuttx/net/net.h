@@ -349,6 +349,24 @@ extern "C"
 void net_initialize(void);
 
 /****************************************************************************
+ * Name: net_teardown
+ *
+ * Description:
+ *   This function is called from out of tree network tests target. Frees
+ *   all memory allocated during network testing and nulls out all global
+ *   variables.
+ *
+ * Input Parameters:
+ *   None
+ *
+ * Returned Value:
+ *   None
+ *
+ ****************************************************************************/
+
+void net_teardown(void);
+
+/****************************************************************************
  * Critical section management.
  *
  * Re-entrant mutex based locking of the network is supported:

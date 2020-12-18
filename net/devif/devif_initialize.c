@@ -96,4 +96,28 @@ void devif_initialize(void)
 
   devif_callback_init();
 }
+
+/****************************************************************************
+ * Name: devif_teardown
+ *
+ * Description:
+ *   Perform teardown of the network device interface layer
+ *
+ * Input Parameters:
+ *   None
+ *
+ * Returned Value:
+ *   None
+ *
+ * Assumptions:
+ *   Called in tests only to clear globals
+ *
+ ****************************************************************************/
+
+void devif_teardown(void)
+{
+  /* Tear down callback support */
+
+  devif_callback_teardown();
+}
 #endif /* CONFIG_NET */
